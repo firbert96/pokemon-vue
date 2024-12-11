@@ -23,7 +23,7 @@ export default defineConfig({
         'vue',
         {
           'vue-router/auto': ['useRoute', 'useRouter'],
-        }
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       eslintrc: {
@@ -32,6 +32,9 @@ export default defineConfig({
       vueTemplate: true,
     }),
     Components({
+      dirs: ['src/components', 'src/pages'],
+      extensions: ['vue'],
+      deep: true,
       dts: 'src/components.d.ts',
     }),
     Vue({
@@ -46,7 +49,7 @@ export default defineConfig({
     }),
     Fonts({
       google: {
-        families: [ {
+        families: [{
           name: 'Roboto',
           styles: 'wght@100;300;400;500;700;900',
         }],
